@@ -19,6 +19,7 @@ interface IngredientDef {
   finalRotation: number;
   depthScale: number;     // for subtle 3D depth
   shadow: string;
+  layer: 'foreground' | 'background';
 }
 
 const INGREDIENTS: IngredientDef[] = [
@@ -28,13 +29,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/red-chilli.png',
     targetAngleDeg: -38,
     sweepDeg: 210,
-    targetRadiusDesktop: 228,
-    targetRadiusMobile: 155,
-    widthDesktop: 74,
-    widthMobile: 52,
+    targetRadiusDesktop: 255,
+    targetRadiusMobile: 172,
+    widthDesktop: 102,
+    widthMobile: 66,
     finalRotation: 24,
-    depthScale: 1.05,
-    shadow: 'drop-shadow(0 14px 18px rgba(0,0,0,0.55))',
+    depthScale: 1.08,
+    shadow: 'drop-shadow(0 20px 26px rgba(0,0,0,0.72))',
+    layer: 'foreground',
   },
   {
     id: 'green-chilli',
@@ -42,13 +44,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/green-chilli.png',
     targetAngleDeg: 145,
     sweepDeg: 230,
-    targetRadiusDesktop: 232,
-    targetRadiusMobile: 158,
-    widthDesktop: 72,
-    widthMobile: 50,
+    targetRadiusDesktop: 258,
+    targetRadiusMobile: 174,
+    widthDesktop: 96,
+    widthMobile: 62,
     finalRotation: -18,
     depthScale: 0.96,
-    shadow: 'drop-shadow(0 12px 16px rgba(0,0,0,0.5))',
+    shadow: 'drop-shadow(0 14px 18px rgba(0,0,0,0.52))',
+    layer: 'background',
   },
   {
     id: 'garlic-clove',
@@ -56,13 +59,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/garlic-clove.png',
     targetAngleDeg: -132,
     sweepDeg: 190,
-    targetRadiusDesktop: 216,
-    targetRadiusMobile: 146,
-    widthDesktop: 52,
-    widthMobile: 38,
+    targetRadiusDesktop: 242,
+    targetRadiusMobile: 162,
+    widthDesktop: 80,
+    widthMobile: 52,
     finalRotation: -22,
-    depthScale: 1.02,
-    shadow: 'drop-shadow(0 10px 14px rgba(0,0,0,0.45))',
+    depthScale: 0.94,
+    shadow: 'drop-shadow(0 12px 16px rgba(0,0,0,0.48))',
+    layer: 'background',
   },
   {
     id: 'ginger-slice',
@@ -70,13 +74,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/ginger-slice.png',
     targetAngleDeg: 48,
     sweepDeg: 220,
-    targetRadiusDesktop: 222,
-    targetRadiusMobile: 150,
-    widthDesktop: 62,
-    widthMobile: 44,
+    targetRadiusDesktop: 248,
+    targetRadiusMobile: 166,
+    widthDesktop: 88,
+    widthMobile: 58,
     finalRotation: 18,
-    depthScale: 0.98,
-    shadow: 'drop-shadow(0 12px 16px rgba(0,0,0,0.5))',
+    depthScale: 1.06,
+    shadow: 'drop-shadow(0 18px 24px rgba(0,0,0,0.68))',
+    layer: 'foreground',
   },
   {
     id: 'scallion-1',
@@ -84,13 +89,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/scallion-1.png',
     targetAngleDeg: -82,
     sweepDeg: 240,
-    targetRadiusDesktop: 226,
-    targetRadiusMobile: 152,
-    widthDesktop: 54,
-    widthMobile: 38,
+    targetRadiusDesktop: 252,
+    targetRadiusMobile: 168,
+    widthDesktop: 84,
+    widthMobile: 55,
     finalRotation: 36,
-    depthScale: 1.04,
-    shadow: 'drop-shadow(0 10px 14px rgba(0,0,0,0.45))',
+    depthScale: 0.97,
+    shadow: 'drop-shadow(0 12px 16px rgba(0,0,0,0.48))',
+    layer: 'background',
   },
   {
     id: 'scallion-2',
@@ -98,13 +104,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/scallion-2.png',
     targetAngleDeg: 98,
     sweepDeg: 200,
-    targetRadiusDesktop: 224,
-    targetRadiusMobile: 150,
-    widthDesktop: 50,
-    widthMobile: 36,
+    targetRadiusDesktop: 246,
+    targetRadiusMobile: 164,
+    widthDesktop: 78,
+    widthMobile: 52,
     finalRotation: -26,
-    depthScale: 0.95,
-    shadow: 'drop-shadow(0 10px 14px rgba(0,0,0,0.45))',
+    depthScale: 1.04,
+    shadow: 'drop-shadow(0 16px 22px rgba(0,0,0,0.62))',
+    layer: 'foreground',
   },
   {
     id: 'garlic-cluster',
@@ -112,13 +119,14 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/garlic-cluster.png',
     targetAngleDeg: 192,
     sweepDeg: 195,
-    targetRadiusDesktop: 236,
-    targetRadiusMobile: 158,
-    widthDesktop: 58,
-    widthMobile: 42,
+    targetRadiusDesktop: 260,
+    targetRadiusMobile: 174,
+    widthDesktop: 86,
+    widthMobile: 56,
     finalRotation: 12,
     depthScale: 0.92,
-    shadow: 'drop-shadow(0 12px 16px rgba(0,0,0,0.48))',
+    shadow: 'drop-shadow(0 14px 18px rgba(0,0,0,0.48))',
+    layer: 'background',
   },
   {
     id: 'scallion-3',
@@ -126,37 +134,65 @@ const INGREDIENTS: IngredientDef[] = [
     src: '/images/ingredients/scallion-3.png',
     targetAngleDeg: 6,
     sweepDeg: 215,
-    targetRadiusDesktop: 230,
-    targetRadiusMobile: 156,
-    widthDesktop: 44,
-    widthMobile: 32,
+    targetRadiusDesktop: 250,
+    targetRadiusMobile: 168,
+    widthDesktop: 76,
+    widthMobile: 50,
     finalRotation: -12,
-    depthScale: 1.0,
-    shadow: 'drop-shadow(0 8px 12px rgba(0,0,0,0.4))',
+    depthScale: 1.06,
+    shadow: 'drop-shadow(0 16px 22px rgba(0,0,0,0.60))',
+    layer: 'foreground',
   },
 ];
 
-export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, { className?: string }>(
-  ({ className = '' }, ref) => {
+export interface PhotographicOrbitProps {
+  className?: string;
+  layer?: 'all' | 'foreground' | 'background';
+}
+
+export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, PhotographicOrbitProps>(
+  ({ className = '', layer = 'all' }, ref) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    const getIsMobile = () => typeof window !== 'undefined' && window.innerWidth < 768;
+    const activeIngredients = layer === 'all'
+      ? INGREDIENTS
+      : INGREDIENTS.filter((item) => item.layer === layer);
+
+    const getViewportTier = (): 'smallMobile' | 'mobile' | 'desktop' => {
+      if (typeof window === 'undefined') return 'desktop';
+      const w = window.innerWidth;
+      if (w < 375) return 'smallMobile';
+      if (w < 768) return 'mobile';
+      return 'desktop';
+    };
+
+    const getRadius = (ing: IngredientDef, tier: 'smallMobile' | 'mobile' | 'desktop') => {
+      if (tier === 'smallMobile') return Math.round(ing.targetRadiusMobile * 0.76);
+      if (tier === 'mobile') return ing.targetRadiusMobile;
+      return ing.targetRadiusDesktop;
+    };
+
+    const getScaleMultiplier = (tier: 'smallMobile' | 'mobile' | 'desktop') => {
+      if (tier === 'smallMobile') return 0.78;
+      return 1.0;
+    };
 
     const setupStatic = () => {
-      const isMobile = getIsMobile();
-      INGREDIENTS.forEach((ing, i) => {
+      const tier = getViewportTier();
+      const scaleMult = getScaleMultiplier(tier);
+      activeIngredients.forEach((ing, i) => {
         const el = itemRefs.current[i];
         if (!el) return;
         const rad = (ing.targetAngleDeg * Math.PI) / 180;
-        const r = isMobile ? ing.targetRadiusMobile : ing.targetRadiusDesktop;
+        const r = getRadius(ing, tier);
         const x = Math.cos(rad) * r;
         const y = Math.sin(rad) * r;
         gsap.set(el, {
           x,
           y,
           rotation: ing.finalRotation,
-          scale: ing.depthScale,
+          scale: ing.depthScale * scaleMult,
           opacity: 1,
           visibility: 'visible',
         });
@@ -169,16 +205,17 @@ export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, 
         return;
       }
 
-      const isMobile = getIsMobile();
+      const tier = getViewportTier();
+      const scaleMult = getScaleMultiplier(tier);
 
-      INGREDIENTS.forEach((ing, i) => {
+      activeIngredients.forEach((ing, i) => {
         const el = itemRefs.current[i];
         if (!el) return;
 
         const targetRad = (ing.targetAngleDeg * Math.PI) / 180;
-        const targetR = isMobile ? ing.targetRadiusMobile : ing.targetRadiusDesktop;
+        const targetR = getRadius(ing, tier);
         const startRad = targetRad - (ing.sweepDeg * Math.PI) / 180;
-        const startR = isMobile ? 60 : 85;
+        const startR = tier === 'smallMobile' ? 48 : tier === 'mobile' ? 60 : 85;
 
         // Initial emerging state
         const initialX = Math.cos(startRad) * startR;
@@ -188,7 +225,7 @@ export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, 
           x: initialX,
           y: initialY,
           rotation: ing.finalRotation - 120,
-          scale: 0.35,
+          scale: 0.28 * scaleMult,
           opacity: 0,
           visibility: 'visible',
         });
@@ -210,7 +247,7 @@ export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, 
             const curX = Math.cos(curRad) * curR;
             const curY = Math.sin(curRad) * curR;
             const curRot = (ing.finalRotation - 120) + 120 * p;
-            const curScale = 0.35 + (ing.depthScale - 0.35) * p;
+            const curScale = (0.28 + (ing.depthScale - 0.28) * p) * scaleMult;
             const curOpacity = Math.min(1, p * 3.2);
 
             gsap.set(el, {
@@ -229,26 +266,40 @@ export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, 
               x: finalX,
               y: finalY,
               rotation: ing.finalRotation,
-              scale: ing.depthScale,
+              scale: ing.depthScale * scaleMult,
               opacity: 1,
             });
 
-            // Gentle continuous floating breathing oscillation
-            gsap.to(el, {
-              y: finalY + (i % 2 === 0 ? 5 : -5),
-              rotation: ing.finalRotation + (i % 2 === 0 ? 3 : -3),
-              duration: 3.2 + (i % 4) * 0.3,
-              repeat: -1,
-              yoyo: true,
-              ease: 'sine.inOut',
-            });
+            // 3D Depth Layering: Selected foreground ingredients receive dynamic foreground floating movement
+            if (ing.layer === 'foreground') {
+              gsap.to(el, {
+                x: finalX + (i % 2 === 0 ? 5 : -4),
+                y: finalY + (i % 2 === 0 ? -6 : 5),
+                rotation: ing.finalRotation + (i % 2 === 0 ? 3.5 : -3),
+                scale: ing.depthScale * scaleMult * 1.03,
+                duration: 3.4 + (i % 3) * 0.4,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+              });
+            } else {
+              // Background ingredients receive gentler, softer ambient drift deeper behind the plate
+              gsap.to(el, {
+                y: finalY + (i % 2 === 0 ? 2.5 : -2.5),
+                rotation: ing.finalRotation + (i % 2 === 0 ? 1.5 : -1.5),
+                duration: 4.2 + (i % 3) * 0.5,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+              });
+            }
           },
         });
       });
     };
 
     const reset = () => {
-      INGREDIENTS.forEach((_, i) => {
+      activeIngredients.forEach((_, i) => {
         const el = itemRefs.current[i];
         if (el) {
           gsap.killTweensOf(el);
@@ -268,7 +319,7 @@ export const PhotographicOrbitIngredients = forwardRef<PhotographicOrbitHandle, 
         className={`pointer-events-none select-none absolute inset-0 flex items-center justify-center ${className}`}
         aria-hidden="true"
       >
-        {INGREDIENTS.map((ing, i) => (
+        {activeIngredients.map((ing, i) => (
           <div
             key={ing.id}
             ref={(node) => {

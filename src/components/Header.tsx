@@ -235,7 +235,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
             {/* Quick Phone Call on Mobile/Small screens */}
             <a
               href={`tel:${RESTAURANT_INFO.phone}`}
-              className="p-2 sm:p-2.5 rounded-lg bg-[#30201B] border border-[#3D2A24] text-[#FFF9F1] hover:text-[#B77B4A] transition-colors md:hidden"
+              className="min-h-[44px] min-w-[44px] p-2.5 rounded-lg bg-[#30201B] border border-[#3D2A24] text-[#FFF9F1] hover:text-[#B77B4A] transition-colors flex items-center justify-center md:hidden"
               title="Call Sakinaka Front Desk"
               aria-label="Call Front Desk"
             >
@@ -246,7 +246,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
             <button
               ref={menuTriggerRef}
               onClick={() => setNavPanelOpen(true)}
-              className="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#3D2A24] bg-[#30201B]/80 hover:bg-[#30201B] hover:border-[#B77B4A] text-[#FFF9F1] text-xs uppercase tracking-[0.18em] font-bold flex items-center gap-2 transition-all shadow-sm group"
+              className="min-h-[44px] px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#3D2A24] bg-[#30201B]/80 hover:bg-[#30201B] hover:border-[#B77B4A] text-[#FFF9F1] text-xs uppercase tracking-[0.18em] font-bold flex items-center gap-2 transition-all shadow-sm group"
               aria-label="Open complete navigation menu"
               aria-expanded={navPanelOpen}
             >
@@ -270,42 +270,44 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
           role="dialog"
           aria-modal="true"
           aria-label="Restaurant navigation"
-          className="fixed inset-0 z-50 bg-[#641F29] text-[#FFF9F1] flex flex-col justify-between overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#641F29] text-[#FFF9F1] flex flex-col justify-between overflow-y-auto overflow-x-hidden"
         >
-          {/* Top Bar inside Overlay */}
-          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-12 py-5 sm:py-6 flex items-center justify-between border-b border-[#FFF9F1]/15">
-            <Link
-              to="/"
-              onClick={() => setNavPanelOpen(false)}
-              className="flex items-center gap-3 group"
-            >
-              <div className="w-10 h-10 rounded-lg bg-[#17110F] border border-[#B77B4A]/30 flex items-center justify-center shadow-md">
-                <span className="font-serif text-[#FFF9F1] font-bold text-lg">5S</span>
-              </div>
-              <div className="flex flex-col justify-center">
-                <span className="font-display tracking-[0.22em] text-[#FFF9F1] text-lg font-extrabold leading-tight">
-                  5 SPICE
-                </span>
-              </div>
-            </Link>
+          {/* Top Bar inside Overlay (Sticky for always-accessible CLOSE button) */}
+          <div className="sticky top-0 z-30 bg-[#641F29]/95 backdrop-blur-md border-b border-[#FFF9F1]/15">
+            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-12 py-4 sm:py-5 flex items-center justify-between">
+              <Link
+                to="/"
+                onClick={() => setNavPanelOpen(false)}
+                className="flex items-center gap-3 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-[#17110F] border border-[#B77B4A]/30 flex items-center justify-center shadow-md">
+                  <span className="font-serif text-[#FFF9F1] font-bold text-lg">5S</span>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="font-display tracking-[0.22em] text-[#FFF9F1] text-lg font-extrabold leading-tight">
+                    5 SPICE
+                  </span>
+                </div>
+              </Link>
 
-            {/* Close Button */}
-            <button
-              ref={closeButtonRef}
-              onClick={() => {
-                setNavPanelOpen(false);
-                menuTriggerRef.current?.focus();
-              }}
-              className="px-4 py-2 rounded-lg border border-[#B77B4A]/30 bg-[#17110F]/70 hover:bg-[#17110F] text-[#FFF9F1] hover:text-[#B77B4A] text-xs uppercase tracking-[0.16em] font-semibold flex items-center gap-2 transition-all shadow-md"
-              aria-label="Close navigation menu"
-            >
-              <span>CLOSE</span>
-              <X className="w-4 h-4 text-[#B77B4A]" />
-            </button>
+              {/* Close Button — Always accessible on any device */}
+              <button
+                ref={closeButtonRef}
+                onClick={() => {
+                  setNavPanelOpen(false);
+                  menuTriggerRef.current?.focus();
+                }}
+                className="min-h-[44px] px-3.5 sm:px-4 py-2 rounded-lg border border-[#B77B4A]/40 bg-[#17110F]/80 hover:bg-[#17110F] text-[#FFF9F1] hover:text-[#B77B4A] text-xs uppercase tracking-[0.16em] font-semibold flex items-center gap-2 transition-all shadow-md active:scale-95"
+                aria-label="Close navigation menu"
+              >
+                <span>CLOSE</span>
+                <X className="w-4 h-4 text-[#B77B4A]" />
+              </button>
+            </div>
           </div>
 
-          {/* Main Overlay Content: Editorial 2-Column Grid */}
-          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-12 py-8 sm:py-12 flex-1 flex items-center">
+          {/* Main Overlay Content: Editorial 2-Column Grid (items-start for smooth scrolling) */}
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-10 flex-1 flex items-start">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 w-full items-start">
               {/* Left Column: Large Editorial Navigation Links */}
               <div className="lg:col-span-7 space-y-2">
@@ -314,7 +316,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                   <span>Explore 5 Spice Sakinaka</span>
                 </div>
 
-                <nav className="flex flex-col space-y-2 sm:space-y-3">
+                <nav className="flex flex-col space-y-1 sm:space-y-2">
                   {navLinks.map((item, index) => {
                     const numberLabel = `0${index + 1}`;
                     if (item.isSection) {
@@ -322,12 +324,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                         <button
                           key={item.label}
                           onClick={() => handleNavClick(item.path)}
-                          className="nav-menu-item text-left group flex items-baseline gap-4 sm:gap-6 py-2 border-b border-[#FFF9F1]/10 hover:border-[#B77B4A] transition-all"
+                          className="nav-menu-item text-left group flex items-baseline gap-3 sm:gap-6 py-2.5 sm:py-3 min-h-[44px] border-b border-[#FFF9F1]/10 hover:border-[#B77B4A] transition-all"
                         >
                           <span className="font-mono text-xs text-[#B77B4A]/80 group-hover:text-white transition-colors">
                             {numberLabel}
                           </span>
-                          <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#FFF9F1] group-hover:text-[#B77B4A] group-hover:translate-x-2 transition-all tracking-tight">
+                          <span className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFF9F1] group-hover:text-[#B77B4A] group-hover:translate-x-2 transition-all tracking-tight">
                             {item.label}
                           </span>
                           <ArrowRight className="w-4 h-4 text-[#B77B4A] opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
@@ -339,12 +341,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                         key={item.label}
                         to={item.path}
                         onClick={() => setNavPanelOpen(false)}
-                        className="nav-menu-item group flex items-baseline gap-4 sm:gap-6 py-2 border-b border-[#FFF9F1]/10 hover:border-[#B77B4A] transition-all"
+                        className="nav-menu-item group flex items-baseline gap-3 sm:gap-6 py-2.5 sm:py-3 min-h-[44px] border-b border-[#FFF9F1]/10 hover:border-[#B77B4A] transition-all"
                       >
                         <span className="font-mono text-xs text-[#B77B4A]/80 group-hover:text-white transition-colors">
                           {numberLabel}
                         </span>
-                        <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#FFF9F1] group-hover:text-[#B77B4A] group-hover:translate-x-2 transition-all tracking-tight">
+                        <span className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFF9F1] group-hover:text-[#B77B4A] group-hover:translate-x-2 transition-all tracking-tight">
                           {item.label}
                         </span>
                         <ArrowRight className="w-4 h-4 text-[#B77B4A] opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
@@ -354,67 +356,68 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                 </nav>
               </div>
 
-              {/* Right Column: Editorial Restaurant Detail Card */}
-              <div className="nav-info-panel lg:col-span-5 bg-[#30201B] border border-[#3D2A24] rounded-2xl p-6 sm:p-8 space-y-5 shadow-2xl text-[#FFF9F1]">
+              {/* Right Column: Editorial Restaurant Detail Card (Fully visible, responsive, unclipped) */}
+              <div className="nav-info-panel lg:col-span-5 bg-[#30201B] border border-[#3D2A24] rounded-2xl p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-3.5 shadow-2xl text-[#FFF9F1] mb-6 lg:mb-0">
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.24em] text-[#B77B4A] font-semibold block mb-1 font-mono">
                     Outlet Information
                   </span>
-                  <h3 className="font-serif text-xl font-bold text-[#FFF9F1] mb-2">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FFF9F1] mb-1">
                     5 Spice Sakinaka
                   </h3>
                   <p className="text-xs text-[#E8D8C5]/80 font-normal leading-relaxed">
                     {RESTAURANT_INFO.fullAddress}
                   </p>
-                  <div className="mt-2.5 flex items-center gap-2 text-xs text-[#E8D8C5] font-medium">
-                    <Train className="w-4 h-4 text-[#B8322A] shrink-0" />
+                  <div className="mt-2 flex items-center gap-2 text-xs text-[#E8D8C5] font-medium">
+                    <Train className="w-3.5 h-3.5 text-[#B8322A] shrink-0" />
                     <span>{RESTAURANT_INFO.metroStation}</span>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#3D2A24] space-y-2">
+                <div className="pt-2.5 border-t border-[#3D2A24] space-y-1">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#B77B4A] font-semibold block font-mono">
                     Operating Hours
                   </span>
-                  <div className="flex items-start gap-2 text-xs text-[#E8D8C5]/80">
-                    <Clock className="w-4 h-4 text-[#B8322A] shrink-0 mt-0.5" />
-                    <div>
-                      <span className="block text-[#FFF9F1] font-semibold">
+                  <div className="flex items-start gap-2 text-xs text-[#E8D8C5]/85">
+                    <Clock className="w-3.5 h-3.5 text-[#B8322A] shrink-0 mt-0.5" />
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                      <span className="text-[#FFF9F1] font-medium">
                         Lunch: {RESTAURANT_INFO.timings.lunch}
                       </span>
-                      <span className="block text-[#FFF9F1] font-semibold">
+                      <span className="text-[#3D2A24] hidden sm:inline">•</span>
+                      <span className="text-[#FFF9F1] font-medium">
                         Dinner: {RESTAURANT_INFO.timings.dinner}
                       </span>
-                      <span className="text-emerald-400 font-semibold text-[11px] block mt-0.5">
+                      <span className="text-emerald-400 font-semibold text-[11px] w-full block">
                         ● {RESTAURANT_INFO.timings.days}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#3D2A24] space-y-2">
+                <div className="pt-2.5 border-t border-[#3D2A24] space-y-1">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#B77B4A] font-semibold block font-mono">
                     Direct Phone Numbers
                   </span>
-                  <div className="flex flex-col gap-1 text-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
                     <a
                       href={`tel:${RESTAURANT_INFO.phone}`}
-                      className="flex items-center gap-2 text-[#FFF9F1] hover:text-[#B77B4A] font-mono font-medium transition-colors"
+                      className="flex items-center gap-1.5 text-[#FFF9F1] hover:text-[#B77B4A] font-mono font-medium transition-colors py-0.5"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#B8322A]" />
-                      <span>{RESTAURANT_INFO.phone} (Main Desk)</span>
+                      <Phone className="w-3 h-3 text-[#B8322A] shrink-0" />
+                      <span>{RESTAURANT_INFO.phone}</span>
                     </a>
                     <a
                       href={`tel:${RESTAURANT_INFO.secondaryPhone}`}
-                      className="flex items-center gap-2 text-[#FFF9F1] hover:text-[#B77B4A] font-mono font-medium transition-colors"
+                      className="flex items-center gap-1.5 text-[#FFF9F1] hover:text-[#B77B4A] font-mono font-medium transition-colors py-0.5"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#B8322A]" />
-                      <span>{RESTAURANT_INFO.secondaryPhone} (Mobile)</span>
+                      <Phone className="w-3 h-3 text-[#B8322A] shrink-0" />
+                      <span>{RESTAURANT_INFO.secondaryPhone}</span>
                     </a>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#3D2A24] space-y-2">
+                <div className="pt-2.5 border-t border-[#3D2A24] space-y-1.5">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#B77B4A] font-semibold block font-mono">
                     Order Delivery Online
                   </span>
@@ -423,7 +426,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                       href={RESTAURANT_INFO.externalLinks.zomato}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 rounded-lg bg-[#17110F] hover:bg-[#17110F]/80 border border-[#3D2A24] hover:border-[#B77B4A] text-center text-[#FFF9F1] font-bold transition-all flex items-center justify-center gap-1.5"
+                      className="min-h-[44px] px-3 py-2 rounded-lg bg-[#17110F] hover:bg-[#17110F]/80 border border-[#3D2A24] hover:border-[#B77B4A] text-center text-[#FFF9F1] font-bold transition-all flex items-center justify-center gap-1.5"
                     >
                       <span className="text-[#e23744]">Zomato</span>
                       <ExternalLink className="w-3 h-3 text-[#E8D8C5]/60" />
@@ -432,7 +435,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                       href={RESTAURANT_INFO.externalLinks.swiggy}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 rounded-lg bg-[#17110F] hover:bg-[#17110F]/80 border border-[#3D2A24] hover:border-[#B77B4A] text-center text-[#FFF9F1] font-bold transition-all flex items-center justify-center gap-1.5"
+                      className="min-h-[44px] px-3 py-2 rounded-lg bg-[#17110F] hover:bg-[#17110F]/80 border border-[#3D2A24] hover:border-[#B77B4A] text-center text-[#FFF9F1] font-bold transition-all flex items-center justify-center gap-1.5"
                     >
                       <span className="text-[#fc8019]">Swiggy</span>
                       <ExternalLink className="w-3 h-3 text-[#E8D8C5]/60" />
@@ -440,13 +443,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
                   </div>
                 </div>
 
+                {/* Reservation CTA — Always fully accessible */}
+
                 <div className="pt-2">
                   <button
                     onClick={() => {
                       setNavPanelOpen(false);
                       if (onOpenReservation) onOpenReservation();
                     }}
-                    className="w-full py-3 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.18em] uppercase rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                    className="w-full min-h-[48px] py-3.5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.18em] uppercase rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
                   >
                     <Calendar className="w-4 h-4 text-white" />
                     <span>Reserve a Table Inquiry</span>

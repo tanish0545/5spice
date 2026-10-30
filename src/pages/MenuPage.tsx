@@ -143,7 +143,7 @@ export const MenuPage: React.FC = () => {
       </section>
 
       {/* Search & Category Filter Controls */}
-      <section className="sticky top-[68px] z-30 bg-[#F4EBDD]/95 backdrop-blur-md border-b border-[#E2D3C0] py-3.5 px-4 sm:px-6 md:px-12 shadow-sm">
+      <section className="sticky top-[60px] sm:top-[68px] z-30 bg-[#F4EBDD]/95 backdrop-blur-md border-b border-[#E2D3C0] py-3.5 px-4 sm:px-6 md:px-12 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
           {/* Search Bar */}
           <div className="relative w-full md:w-80">
@@ -153,7 +153,7 @@ export const MenuPage: React.FC = () => {
               placeholder="Search dishes (e.g. Pot Rice, Chilli Potato)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#FFF9F1] border border-[#E2D3C0] rounded-full pl-10 pr-4 py-2 text-xs text-[#30201B] placeholder-[#30201B]/50 focus:outline-none focus:border-[#641F29] shadow-sm"
+              className="w-full bg-[#FFF9F1] border border-[#E2D3C0] rounded-full pl-10 pr-4 py-2.5 sm:py-2 text-sm sm:text-xs text-[#30201B] placeholder-[#30201B]/50 focus:outline-none focus:border-[#641F29] shadow-sm"
             />
           </div>
 
@@ -165,7 +165,7 @@ export const MenuPage: React.FC = () => {
             <div className="flex items-center bg-[#FFF9F1] border border-[#E2D3C0] rounded-full p-1 shadow-sm">
               <button
                 onClick={() => setDietaryFilter('all')}
-                className={`px-3 py-1 rounded-full text-[11px] font-medium transition-colors ${
+                className={`min-h-[32px] px-3 py-1 rounded-full text-[11px] font-medium transition-colors ${
                   dietaryFilter === 'all'
                     ? 'bg-[#641F29] text-white font-semibold'
                     : 'text-[#30201B]/70 hover:text-[#30201B]'
@@ -175,7 +175,7 @@ export const MenuPage: React.FC = () => {
               </button>
               <button
                 onClick={() => setDietaryFilter('veg')}
-                className={`px-3 py-1 rounded-full text-[11px] font-medium transition-colors flex items-center gap-1.5 ${
+                className={`min-h-[32px] px-3 py-1 rounded-full text-[11px] font-medium transition-colors flex items-center gap-1.5 ${
                   dietaryFilter === 'veg'
                     ? 'bg-emerald-700 text-white font-semibold'
                     : 'text-[#30201B]/70 hover:text-[#30201B]'
@@ -186,7 +186,7 @@ export const MenuPage: React.FC = () => {
               </button>
               <button
                 onClick={() => setDietaryFilter('non-veg')}
-                className={`px-3 py-1 rounded-full text-[11px] font-medium transition-colors flex items-center gap-1.5 ${
+                className={`min-h-[32px] px-3 py-1 rounded-full text-[11px] font-medium transition-colors flex items-center gap-1.5 ${
                   dietaryFilter === 'non-veg'
                     ? 'bg-rose-700 text-white font-semibold'
                     : 'text-[#30201B]/70 hover:text-[#30201B]'
@@ -200,12 +200,12 @@ export const MenuPage: React.FC = () => {
         </div>
 
         {/* Category Horizontal Scroll Pills */}
-        <div className="max-w-7xl mx-auto mt-3 overflow-x-auto pb-1 flex items-center gap-2 no-scrollbar">
+        <div className="max-w-7xl mx-auto mt-3 overflow-x-auto pb-2 flex items-center gap-2 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
           {MENU_CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-full text-xs whitespace-nowrap uppercase tracking-wider font-medium transition-all ${
+              className={`min-h-[36px] px-3.5 py-1.5 rounded-full text-xs whitespace-nowrap uppercase tracking-wider font-medium transition-all ${
                 selectedCategory === cat
                   ? 'bg-[#641F29] text-white font-bold shadow-sm'
                   : 'bg-[#FFF9F1] text-[#30201B]/80 hover:text-[#30201B] border border-[#E2D3C0] shadow-sm'
@@ -339,45 +339,45 @@ export const MenuPage: React.FC = () => {
       {/* Dish Detail Modal */}
       {selectedDish && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md"
           onClick={() => setSelectedDish(null)}
         >
           <div
             ref={dishModalRef}
-            className="relative max-w-2xl w-full bg-[#FFF9F1] border border-[#E2D3C0] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative max-w-2xl w-full max-h-[92vh] overflow-y-auto bg-[#FFF9F1] border border-[#E2D3C0] rounded-2xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedDish(null)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors shadow-md"
               aria-label="Close dish preview"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </button>
 
-            <div className="relative h-64 sm:h-72 overflow-hidden bg-[#E8D8C5]">
+            <div className="relative h-56 xs:h-64 sm:h-72 overflow-hidden bg-[#E8D8C5]">
               <img
                 src={selectedDish.image}
                 alt={selectedDish.name}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+              <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-6 sm:right-6 flex items-center justify-between text-white">
                 <div>
                   <span className="text-[10px] uppercase font-mono tracking-widest text-[#B77B4A] font-semibold block mb-0.5">
                     {selectedDish.category}
                   </span>
-                  <h3 className="font-serif text-2xl font-bold">{selectedDish.name}</h3>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold">{selectedDish.name}</h3>
                 </div>
-                <div className="px-4 py-1.5 rounded-full bg-[#641F29] text-white font-mono font-bold text-lg shadow-md">
+                <div className="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#641F29] text-white font-mono font-bold text-base sm:text-lg shadow-md">
                   {selectedDish.formattedPrice}
                 </div>
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 space-y-4">
+            <div className="p-4 xs:p-6 sm:p-8 space-y-3.5 sm:space-y-4">
               {selectedDish.subtitle && (
-                <p className="font-serif italic text-sm text-[#862D35] font-medium">
+                <p className="font-serif italic text-xs sm:text-sm text-[#862D35] font-medium">
                   {selectedDish.subtitle}
                 </p>
               )}
@@ -397,37 +397,39 @@ export const MenuPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-2">
                 <button
                   onClick={() => {
                     setSelectedDish(null);
                     setReservationOpen(true);
                   }}
-                  className="flex-1 py-3 px-5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2"
+                  className="w-full sm:flex-1 min-h-[44px] py-3 px-5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2"
                 >
                   <Calendar className="w-4 h-4 text-white" />
                   <span>Reserve Table to Enjoy</span>
                 </button>
 
-                <a
-                  href={RESTAURANT_INFO.externalLinks.zomato}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-3 px-5 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] text-[#30201B] font-semibold text-xs tracking-wider uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
-                >
-                  <span className="text-[#e23744]">Order Zomato</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#30201B]/60" />
-                </a>
+                <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
+                  <a
+                    href={RESTAURANT_INFO.externalLinks.zomato}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[44px] py-2.5 sm:py-3 px-4 sm:px-5 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] text-[#30201B] font-semibold text-xs tracking-wider uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <span className="text-[#e23744]">Zomato</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#30201B]/60" />
+                  </a>
 
-                <a
-                  href={RESTAURANT_INFO.externalLinks.swiggy}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-3 px-5 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] text-[#302321] font-semibold text-xs tracking-wider uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
-                >
-                  <span className="text-[#fc8019]">Order Swiggy</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#30201B]/60" />
-                </a>
+                  <a
+                    href={RESTAURANT_INFO.externalLinks.swiggy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[44px] py-2.5 sm:py-3 px-4 sm:px-5 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] text-[#302321] font-semibold text-xs tracking-wider uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <span className="text-[#fc8019]">Swiggy</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#30201B]/60" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

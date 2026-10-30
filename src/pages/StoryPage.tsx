@@ -87,7 +87,7 @@ export const StoryPage: React.FC = () => {
             <span>The 5 Spice Heritage • Estd. 2004</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#302321] tracking-tight">
+          <h1 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[#302321] tracking-tight">
             Generous Portions, Wok Mastery &amp; Cult Flavors
           </h1>
 
@@ -107,7 +107,7 @@ export const StoryPage: React.FC = () => {
               <span>The Wok Hei Tradition</span>
             </div>
 
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#302321] tracking-tight">
+            <h2 className="font-serif text-xl xs:text-2xl sm:text-3xl font-bold text-[#302321] tracking-tight">
               High-Flame Woks &amp; Authentic Indo-Chinese Soul
             </h2>
 
@@ -120,7 +120,7 @@ export const StoryPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="md:col-span-5 relative rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-sm h-72 sm:h-80 bg-[#E8D8C5]">
+          <div className="md:col-span-5 relative rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-sm h-60 xs:h-72 sm:h-80 bg-[#E8D8C5]">
             <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-44 h-32 pointer-events-none">
               <CulinarySteam variant="medium" intensity={0.35} />
             </div>
@@ -134,7 +134,7 @@ export const StoryPage: React.FC = () => {
 
         {/* Story Section 2: Colossal Sharing Portions */}
         <div className="story-block grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
-          <div className="md:col-span-5 order-2 md:order-1 relative rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-sm h-72 sm:h-80 bg-[#E8D8C5]">
+          <div className="md:col-span-5 order-2 md:order-1 relative rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-sm h-60 xs:h-72 sm:h-80 bg-[#E8D8C5]">
             <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-40 h-28 pointer-events-none">
               <CulinarySteam variant="subtle" intensity={0.3} />
             </div>
@@ -151,7 +151,7 @@ export const StoryPage: React.FC = () => {
               <span>Generous Hospitality</span>
             </div>
 
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#302321] tracking-tight">
+            <h2 className="font-serif text-xl xs:text-2xl sm:text-3xl font-bold text-[#302321] tracking-tight">
               The Legend of 1000ml Pot Rice &amp; Big Tables
             </h2>
 
@@ -173,7 +173,7 @@ export const StoryPage: React.FC = () => {
               <span>The Sweet Conclusion</span>
             </div>
 
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#302321] tracking-tight">
+            <h2 className="font-serif text-xl xs:text-2xl sm:text-3xl font-bold text-[#302321] tracking-tight">
               Rocky Road &amp; Death By Chocolate
             </h2>
 
@@ -186,7 +186,7 @@ export const StoryPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="md:col-span-5 relative rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-sm h-72 sm:h-80 bg-[#E8D8C5]">
+          <div className="md:col-span-5 relative rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-sm h-60 xs:h-72 sm:h-80 bg-[#E8D8C5]">
             <img
               src="https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=800&q=80"
               alt="5 Spice Rocky Road Dessert"
@@ -196,7 +196,7 @@ export const StoryPage: React.FC = () => {
         </div>
 
         {/* Sakinaka Outlet Details Box */}
-        <div className="bg-[#FFF9F1] border border-[#E2D3C0] rounded-2xl p-6 sm:p-8 md:p-10 space-y-3.5 shadow-sm">
+        <div className="bg-[#FFF9F1] border border-[#E2D3C0] rounded-2xl p-4 xs:p-6 sm:p-8 md:p-10 space-y-3.5 shadow-sm">
           <div className="flex items-center gap-2 text-xs text-[#641F29] font-semibold uppercase tracking-wider font-mono">
             <MapPin className="w-4 h-4 text-[#B8322A]" />
             <span>Our Sakinaka Establishment</span>

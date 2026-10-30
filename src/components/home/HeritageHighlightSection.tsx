@@ -130,7 +130,7 @@ export const HeritageHighlightSection: React.FC = () => {
               <span>Two Decades of Mumbai Flavor</span>
             </div>
 
-            <h2 ref={h2Ref} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFF9F1] tracking-tight leading-tight">
+            <h2 ref={h2Ref} className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFF9F1] tracking-tight leading-tight">
               A Mumbai Institution of Fierce Wok Heat &amp; Unabashed Generosity
             </h2>
 
@@ -169,10 +169,10 @@ export const HeritageHighlightSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="cta-row pt-3 flex flex-wrap items-center gap-4">
+            <div className="cta-row pt-3 flex flex-col xs:flex-row flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 to="/story"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-all"
+                className="w-full xs:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-all"
               >
                 <span>Read The 5 Spice Story</span>
                 <ArrowRight className="w-4 h-4" />
@@ -191,36 +191,36 @@ export const HeritageHighlightSection: React.FC = () => {
                 ref={imgRef}
                 src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80"
                 alt="5 Spice Dining Room Atmosphere"
-                className="w-full h-80 sm:h-96 object-cover scale-110"
+                className="w-full h-72 sm:h-80 md:h-96 object-cover scale-110"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6">
                 <span className="text-[10px] text-[#B77B4A] tracking-[0.2em] uppercase font-bold block mb-1 font-mono">
                   Sakinaka, Andheri East
                 </span>
-                <h3 className="font-serif text-xl sm:text-2xl text-white font-bold">
+                <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-white font-bold">
                   Warm Ambient Dining Space
                 </h3>
-                <p className="text-xs text-gray-200 mt-1 font-light">
+                <p className="text-xs text-gray-200 mt-1 font-light leading-relaxed">
                   Dark timber accents, glowing lanterns, and aromatic wok theatre right off Andheri-Kurla Road.
                 </p>
               </div>
             </div>
 
             {/* Quick Metrics */}
-            <div ref={statsRef} className="grid grid-cols-3 gap-3 text-center">
-              <div className="stat-card p-4 rounded-xl bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] shadow-sm">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#641F29]">20+</div>
-                <div className="text-[10px] uppercase tracking-wider text-[#30201B]/70 mt-1 font-semibold">Years Heritage</div>
+            <div ref={statsRef} className="grid grid-cols-3 gap-2 sm:gap-3 text-center">
+              <div className="stat-card p-2.5 xs:p-3 sm:p-4 rounded-xl bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] shadow-sm">
+                <div className="text-xl xs:text-2xl sm:text-3xl font-serif font-bold text-[#641F29]">20+</div>
+                <div className="text-[9px] xs:text-[10px] uppercase tracking-wider text-[#30201B]/70 mt-1 font-semibold">Years Heritage</div>
               </div>
-              <div className="stat-card p-4 rounded-xl bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] shadow-sm">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#30201B]">100+</div>
-                <div className="text-[10px] uppercase tracking-wider text-[#30201B]/70 mt-1 font-semibold">Cult Dishes</div>
+              <div className="stat-card p-2.5 xs:p-3 sm:p-4 rounded-xl bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] shadow-sm">
+                <div className="text-xl xs:text-2xl sm:text-3xl font-serif font-bold text-[#30201B]">100+</div>
+                <div className="text-[9px] xs:text-[10px] uppercase tracking-wider text-[#30201B]/70 mt-1 font-semibold">Cult Dishes</div>
               </div>
-              <div className="stat-card p-4 rounded-xl bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] shadow-sm">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#641F29]">1000ml</div>
-                <div className="text-[10px] uppercase tracking-wider text-[#30201B]/70 mt-1 font-semibold">Pot Rice Bowls</div>
+              <div className="stat-card p-2.5 xs:p-3 sm:p-4 rounded-xl bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] shadow-sm">
+                <div className="text-xl xs:text-2xl sm:text-3xl font-serif font-bold text-[#641F29]">1000ml</div>
+                <div className="text-[9px] xs:text-[10px] uppercase tracking-wider text-[#30201B]/70 mt-1 font-semibold">Pot Rice Bowls</div>
               </div>
             </div>
           </div>

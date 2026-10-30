@@ -218,11 +218,12 @@ export const AuthorizedDeveloperPage: React.FC<AuthorizedDeveloperPageProps> = (
 
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#141822] hover:bg-[#1C2333] border border-[#232B3B] hover:border-[#38BDF8]/50 text-xs font-mono text-[#CBD5E1] hover:text-[#FFFFFF] transition-all duration-200"
+              className="min-h-[44px] inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#141822] hover:bg-[#1C2333] border border-[#232B3B] hover:border-[#38BDF8]/50 text-xs font-mono text-[#CBD5E1] hover:text-[#FFFFFF] transition-all duration-200"
               title="Return to Website"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-[#38BDF8]" />
-              <span>Return to Website</span>
+              <span className="hidden xs:inline">Return to Website</span>
+              <span className="xs:hidden">Return</span>
             </Link>
           </div>
         </div>
@@ -250,7 +251,7 @@ export const AuthorizedDeveloperPage: React.FC<AuthorizedDeveloperPageProps> = (
           {/* Main Name Heading */}
           <h1
             ref={headingRef}
-            className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#F8FAFC] leading-[1.08] uppercase"
+            className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#F8FAFC] leading-[1.08] uppercase"
             style={{ letterSpacing: '0.04em' }}
           >
             {profile.fullName}

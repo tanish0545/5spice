@@ -69,31 +69,31 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
           {/* Left Column: Outlet Details & Hours */}
           <div ref={leftRef} className="lg:col-span-7 space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8D8C5] border border-[#E2D3C0] text-[#641F29] text-xs font-semibold tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
+              <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-3.5 py-1 rounded-full bg-[#E8D8C5] border border-[#E2D3C0] text-[#641F29] text-[10px] xs:text-xs font-semibold tracking-[0.18em] xs:tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
                 <MapPin className="w-3.5 h-3.5 text-[#B8322A]" />
                 <span>Visit Us in Andheri East</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#302321] tracking-tight">
+              <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[#302321] tracking-tight">
                 5 Spice Sakinaka
               </h2>
-              <p className="mt-3.5 text-sm sm:text-base text-[#302321]/80 font-normal leading-relaxed">
+              <p className="mt-3 sm:mt-3.5 text-xs sm:text-sm md:text-base text-[#302321]/80 font-normal leading-relaxed">
                 Conveniently located on Andheri-Kurla Road, just a brief stroll from Sakinaka Metro Station,
                 surrounded by major corporate centers and easily accessible from Powai and Marol.
               </p>
             </div>
 
             {/* Address Card */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-[#FFF9F1] border border-[#E2D3C0] space-y-4 shadow-sm">
-              <div className="flex items-start gap-4">
+            <div className="p-4 xs:p-6 sm:p-7 rounded-2xl bg-[#FFF9F1] border border-[#E2D3C0] space-y-4 shadow-sm">
+              <div className="flex items-start gap-3 xs:gap-4">
                 <div className="w-10 h-10 rounded-xl bg-[#F4EBDD] border border-[#E2D3C0] flex items-center justify-center shrink-0 text-[#B8322A]">
                   <Navigation className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-[#302321] text-lg">Full Address</h3>
-                  <p className="text-sm text-[#302321]/80 mt-1 leading-relaxed">
+                  <h3 className="font-serif font-bold text-[#302321] text-base xs:text-lg">Full Address</h3>
+                  <p className="text-xs xs:text-sm text-[#302321]/80 mt-1 leading-relaxed">
                     {RESTAURANT_INFO.fullAddress}
                   </p>
-                  <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-[#302321]/70">
+                  <div className="mt-3 flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-[#302321]/70">
                     <span className="inline-flex items-center gap-1.5 text-[#641F29] font-medium">
                       <Sparkles className="w-3.5 h-3.5 text-[#B8322A]" />
                       {RESTAURANT_INFO.landmark}
@@ -106,12 +106,12 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#E2D3C0] flex flex-wrap items-center gap-4">
+              <div className="pt-3 sm:pt-4 border-t border-[#E2D3C0] flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-2.5 sm:gap-4">
                 <a
                   href={RESTAURANT_INFO.externalLinks.googleMaps}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#B8322A] text-white font-semibold text-xs tracking-wider uppercase rounded-lg hover:bg-[#862D35] transition-colors shadow-sm"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#B8322A] text-white font-semibold text-xs tracking-wider uppercase rounded-lg hover:bg-[#862D35] transition-colors shadow-sm"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Open in Google Maps</span>
@@ -120,7 +120,7 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-1 text-xs text-[#641F29] hover:text-[#B8322A] transition-colors font-bold"
+                  className="min-h-[44px] inline-flex items-center justify-center xs:justify-start gap-1 text-xs text-[#641F29] hover:text-[#B8322A] transition-colors font-bold"
                 >
                   <span>Detailed Directions &amp; Transit Info</span>
                   <span>→</span>
@@ -193,12 +193,12 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
                 Weekend evenings and festival nights at 5 Spice Sakinaka fill up quickly. Secure your table in advance for comfortable family dining.
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-2.5 sm:space-y-3">
                 {onReserveTable && (
                   <button
                     ref={reserveBtnRef}
                     onClick={onReserveTable}
-                    className="w-full py-3.5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.16em] uppercase rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center gap-2"
+                    className="w-full min-h-[48px] py-3.5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.16em] uppercase rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center gap-2"
                   >
                     <Calendar className="w-4 h-4 text-white" />
                     <span>Reserve a Table Online</span>
@@ -207,7 +207,7 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
 
                 <a
                   href={`tel:${RESTAURANT_INFO.phone}`}
-                  className="w-full py-3.5 bg-[#F4EBDD] border border-[#E2D3C0] hover:border-[#641F29] text-[#302321] hover:text-[#641F29] font-semibold text-xs tracking-[0.16em] uppercase rounded-lg transition-all flex items-center justify-center gap-2"
+                  className="w-full min-h-[48px] py-3.5 bg-[#F4EBDD] border border-[#E2D3C0] hover:border-[#641F29] text-[#302321] hover:text-[#641F29] font-semibold text-xs tracking-[0.16em] uppercase rounded-lg transition-all flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-[#B8322A]" />
                   <span>Call {RESTAURANT_INFO.phone}</span>
@@ -215,17 +215,17 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
               </div>
 
               {/* Online Ordering Links */}
-              <div className="mt-6 pt-5 border-t border-[#E2D3C0]">
-                <span className="text-[11px] uppercase tracking-wider text-[#302321]/70 block mb-3 text-center font-medium">
+              <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[#E2D3C0]">
+                <span className="text-[11px] uppercase tracking-wider text-[#302321]/70 block mb-2.5 sm:mb-3 text-center font-medium">
                   Prefer Home Delivery in Andheri East / Powai?
                 </span>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   <a
                     href={RESTAURANT_INFO.externalLinks.zomato}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-[#F4EBDD] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-center transition-colors flex items-center justify-center gap-2 shadow-sm"
+                    className="min-h-[44px] p-2.5 sm:p-3 rounded-lg bg-[#F4EBDD] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-center transition-colors flex items-center justify-center gap-1.5 sm:gap-2 shadow-sm"
                   >
                     <span className="text-xs font-bold text-[#e23744]">Zomato Delivery</span>
                     <ExternalLink className="w-3 h-3 text-[#302321]/60" />
@@ -235,7 +235,7 @@ export const SakinakaLocationSection: React.FC<SakinakaLocationSectionProps> = (
                     href={RESTAURANT_INFO.externalLinks.swiggy}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-[#F4EBDD] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-center transition-colors flex items-center justify-center gap-2 shadow-sm"
+                    className="min-h-[44px] p-2.5 sm:p-3 rounded-lg bg-[#F4EBDD] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-center transition-colors flex items-center justify-center gap-1.5 sm:gap-2 shadow-sm"
                   >
                     <span className="text-xs font-bold text-[#fc8019]">Swiggy Delivery</span>
                     <ExternalLink className="w-3 h-3 text-[#302321]/60" />

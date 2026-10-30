@@ -80,24 +80,24 @@ export const Footer: React.FC = () => {
             <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#FFF9F1] font-mono">
               Explore
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1 sm:space-y-2">
               <li>
-                <Link to="/menu" className="hover:text-[#B77B4A] transition-colors">
+                <Link to="/menu" className="hover:text-[#B77B4A] transition-colors py-1.5 inline-block">
                   Complete Menu (₹)
                 </Link>
               </li>
               <li>
-                <Link to="/story" className="hover:text-[#B77B4A] transition-colors">
+                <Link to="/story" className="hover:text-[#B77B4A] transition-colors py-1.5 inline-block">
                   Our Story &amp; Heritage
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="hover:text-[#B77B4A] transition-colors">
+                <Link to="/gallery" className="hover:text-[#B77B4A] transition-colors py-1.5 inline-block">
                   Dining Ambiance
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-[#B77B4A] transition-colors">
+                <Link to="/contact" className="hover:text-[#B77B4A] transition-colors py-1.5 inline-block">
                   Location &amp; Directions
                 </Link>
               </li>
@@ -183,11 +183,11 @@ export const Footer: React.FC = () => {
             © {CURRENT_YEAR} 5 Spice — Sakinaka, Andheri East, Mumbai. All Rights Reserved.
           </div>
 
-          <div className="flex items-center gap-6">
-            <span className="text-[#E8D8C5]/50">GSAP 3 Scroll-Driven Architecture</span>
+          <div className="flex items-center gap-4 sm:gap-6">
+            <span className="text-[#E8D8C5]/50 hidden xs:inline">GSAP 3 Scroll-Driven Architecture</span>
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-[#B77B4A] hover:text-[#FFF9F1] font-semibold transition-colors p-1"
+              className="min-h-[44px] flex items-center gap-1.5 text-[#B77B4A] hover:text-[#FFF9F1] font-semibold transition-colors px-2 py-1"
               aria-label="Scroll to top"
             >
               <span>Back to Top</span>

@@ -107,23 +107,23 @@ export const FlavoursSection: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[#641F29] text-xs font-semibold tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 md:mb-18">
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-3.5 py-1.5 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[#641F29] text-[10px] xs:text-xs font-semibold tracking-[0.18em] xs:tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#B8322A]" />
             <span>The Four Pillars of Asian Taste</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#30201B] font-bold tracking-tight">
+          <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-[#30201B] font-bold tracking-tight">
             The Flavours of 5 Spice
           </h2>
 
-          <p className="mt-3.5 text-sm sm:text-base text-[#30201B]/80 font-normal leading-relaxed">
+          <p className="mt-3 sm:mt-3.5 text-xs sm:text-sm md:text-base text-[#30201B]/80 font-normal leading-relaxed">
             From the smoking heat of Sichuan woks to the gentle herbal fragrance of Thai lemongrass and coastal seafood, our Sakinaka kitchen honors four distinct Asian culinary traditions.
           </p>
         </div>
 
         {/* 4 Pillars Grid with Overlapping Compositions */}
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {FLAVOUR_PILLARS.map((pillar) => (
             <div
               key={pillar.title}
@@ -131,7 +131,7 @@ export const FlavoursSection: React.FC = () => {
             >
               <div>
                 {/* Photo with Overlay Badge */}
-                <div className="relative h-60 sm:h-72 overflow-hidden bg-[#F4EBDD]">
+                <div className="relative h-52 xs:h-60 sm:h-72 overflow-hidden bg-[#F4EBDD]">
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -140,25 +140,25 @@ export const FlavoursSection: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-md bg-[#FFF9F1]/95 backdrop-blur-md border border-[#E2D3C0] text-[10px] uppercase font-mono font-bold text-[#641F29] tracking-wider shadow-sm flex items-center gap-1.5">
+                  <div className="absolute top-3 xs:top-4 left-3 xs:left-4">
+                    <span className="px-2.5 xs:px-3 py-1 rounded-md bg-[#FFF9F1]/95 backdrop-blur-md border border-[#E2D3C0] text-[9px] xs:text-[10px] uppercase font-mono font-bold text-[#641F29] tracking-wider shadow-sm flex items-center gap-1.5">
                       {pillar.icon}
                       <span>{pillar.cuisine}</span>
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-4 right-4">
+                  <div className="absolute bottom-3 xs:bottom-4 left-3 xs:left-4 right-3 xs:right-4">
                     <span className="text-[10px] text-[#B77B4A] uppercase font-mono tracking-widest font-semibold block mb-0.5">
                       {pillar.tag}
                     </span>
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-white tracking-wide">
+                    <h3 className="font-serif text-lg xs:text-xl sm:text-2xl font-bold text-white tracking-wide">
                       {pillar.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Narrative & Dish Highlights */}
-                <div className="p-6 space-y-3">
+                <div className="p-4 xs:p-5 sm:p-6 space-y-2.5 sm:space-y-3">
                   <p className="text-xs sm:text-sm text-[#30201B]/80 leading-relaxed font-normal">
                     {pillar.description}
                   </p>
@@ -173,10 +173,10 @@ export const FlavoursSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-2">
+              <div className="px-4 xs:px-5 sm:px-6 pb-4 xs:pb-5 sm:pb-6 pt-1 sm:pt-2">
                 <Link
                   to="/menu"
-                  className="inline-flex items-center gap-1.5 text-xs text-[#641F29] group-hover:text-[#B8322A] font-bold tracking-wider uppercase transition-colors"
+                  className="min-h-[44px] inline-flex items-center gap-1.5 text-xs text-[#641F29] group-hover:text-[#B8322A] font-bold tracking-wider uppercase transition-colors"
                 >
                   <span>Explore {pillar.cuisine}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

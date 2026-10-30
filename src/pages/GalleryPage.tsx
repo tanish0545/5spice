@@ -126,7 +126,7 @@ export const GalleryPage: React.FC = () => {
             <span>Visual Gastronomy &amp; Atmosphere</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#30201B] tracking-tight">
+          <h1 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[#30201B] tracking-tight">
             5 Spice Visual Gallery
           </h1>
 
@@ -140,7 +140,7 @@ export const GalleryPage: React.FC = () => {
               <button
                 key={t}
                 onClick={() => setSelectedTag(t)}
-                className={`px-3.5 py-1.5 rounded-full text-xs uppercase tracking-wider font-medium transition-all ${
+                className={`min-h-[36px] px-3.5 py-1.5 rounded-full text-xs uppercase tracking-wider font-medium transition-all ${
                   selectedTag === t
                     ? 'bg-[#641F29] text-white font-bold shadow-sm'
                     : 'bg-[#FFF9F1] text-[#30201B]/80 hover:text-[#30201B] border border-[#E2D3C0] shadow-sm'
@@ -200,34 +200,34 @@ export const GalleryPage: React.FC = () => {
       {/* Full-Screen Photo Lightbox */}
       {activePhoto && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md"
           onClick={() => setActivePhoto(null)}
         >
           <div
             ref={lightboxModalRef}
-            className="relative max-w-4xl w-full bg-[#FFF9F1] rounded-2xl overflow-hidden border border-[#E2D3C0] shadow-2xl"
+            className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto bg-[#FFF9F1] rounded-2xl border border-[#E2D3C0] shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActivePhoto(null)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors shadow-md"
               aria-label="Close photo preview"
             >
               <X className="w-5 h-5" />
             </button>
-            <div className="relative max-h-[70vh] overflow-hidden bg-black flex items-center justify-center">
+            <div className="relative max-h-[65vh] overflow-hidden bg-black flex items-center justify-center">
               <img
                 src={activePhoto.image}
                 alt={activePhoto.title}
-                className="max-h-[70vh] w-full object-contain"
+                className="max-h-[65vh] w-full object-contain"
               />
             </div>
-            <div className="p-6 bg-[#FFF9F1] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="p-4 xs:p-6 bg-[#FFF9F1] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#641F29] font-semibold">
                   {activePhoto.tag}
                 </span>
-                <h3 className="font-serif text-xl font-bold text-[#30201B]">
+                <h3 className="font-serif text-lg xs:text-xl font-bold text-[#30201B]">
                   {activePhoto.title}
                 </h3>
                 <p className="text-xs text-[#30201B]/70 mt-1">{activePhoto.caption}</p>
@@ -237,7 +237,7 @@ export const GalleryPage: React.FC = () => {
                   setActivePhoto(null);
                   setReservationOpen(true);
                 }}
-                className="px-5 py-2.5 bg-[#B8322A] hover:bg-[#862D35] text-white text-xs uppercase tracking-wider font-semibold rounded-lg shrink-0 transition-colors"
+                className="w-full sm:w-auto min-h-[44px] px-5 py-2.5 bg-[#B8322A] hover:bg-[#862D35] text-white text-xs uppercase tracking-wider font-semibold rounded-lg shrink-0 transition-colors flex items-center justify-center"
               >
                 Book Table Experience
               </button>

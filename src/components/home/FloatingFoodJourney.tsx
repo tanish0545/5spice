@@ -345,12 +345,12 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
         className="w-full h-screen bg-[#641F29] text-[#FFF9F1] flex flex-col justify-between relative overflow-hidden px-4 sm:px-6 md:px-12 border-b border-[#3D2A24]"
       >
         {/* Deliberate Section Header */}
-        <div className="max-w-4xl mx-auto text-center pt-8 sm:pt-10 pb-2 relative z-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#17110F]/60 border border-[#B77B4A]/30 text-[10px] tracking-[0.24em] uppercase text-[#E8D8C5] font-semibold font-mono mb-2 shadow-sm">
+        <div className="max-w-4xl mx-auto text-center pt-6 xs:pt-8 sm:pt-10 pb-2 relative z-20">
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-2.5 xs:px-3.5 py-1 rounded-full bg-[#17110F]/60 border border-[#B77B4A]/30 text-[9px] xs:text-[10px] tracking-[0.18em] xs:tracking-[0.24em] uppercase text-[#E8D8C5] font-semibold font-mono mb-2 shadow-sm">
             <Flame className="w-3.5 h-3.5 text-[#B8322A]" />
             <span>The Alchemy of Wok Craft • Sakinaka Discipline</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9F1] tracking-tight uppercase">
+          <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9F1] tracking-tight uppercase">
             From 800°F Fire to Table Service
           </h2>
           <p className="text-xs sm:text-sm text-[#E8D8C5] max-w-lg mx-auto font-normal mt-1 leading-relaxed">
@@ -369,13 +369,13 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
           {/* SCENE 01: The 800°F Wok Discipline */}
           <div
             ref={scene1Ref}
-            className="absolute top-1/4 right-0 md:right-6 max-w-sm sm:max-w-md bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] rounded-2xl p-6 sm:p-8 shadow-2xl opacity-0"
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-6 w-[calc(100vw-32px)] max-w-sm sm:max-w-md bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl opacity-0"
           >
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[10px] uppercase tracking-wider text-[#641F29] mb-2.5 font-semibold font-mono">
               <Sparkles className="w-2.5 h-2.5 text-[#B8322A]" />
               <span>Act I • High-Heat Wok Blanch</span>
             </div>
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#30201B] tracking-tight mb-1">
+            <h3 className="font-serif text-lg xs:text-xl sm:text-2xl font-bold text-[#30201B] tracking-tight mb-1">
               Double-Wok Crisped Potatoes
             </h3>
             <p className="font-serif italic text-xs sm:text-sm text-[#862D35] mb-2.5">
@@ -393,13 +393,13 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
           {/* SCENE 02: The Five Spice & Chilli Glaze */}
           <div
             ref={scene2Ref}
-            className="absolute top-1/3 left-0 md:left-6 max-w-sm sm:max-w-md bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] rounded-2xl p-6 sm:p-8 shadow-2xl opacity-0"
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-6 w-[calc(100vw-32px)] max-w-sm sm:max-w-md bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl opacity-0"
           >
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[10px] uppercase tracking-wider text-[#641F29] mb-2.5 font-semibold font-mono">
               <Sparkles className="w-2.5 h-2.5 text-[#B8322A]" />
               <span>Act II • Signature Chilli Glaze</span>
             </div>
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#30201B] tracking-tight mb-1">
+            <h3 className="font-serif text-lg xs:text-xl sm:text-2xl font-bold text-[#30201B] tracking-tight mb-1">
               Sichuan Heat &amp; Sweet Soya
             </h3>
             <p className="font-serif italic text-xs sm:text-sm text-[#862D35] mb-2.5">
@@ -417,13 +417,13 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
           {/* SCENE 03: Plated for Sharing */}
           <div
             ref={scene3Ref}
-            className="absolute bottom-16 right-0 md:right-6 max-w-sm sm:max-w-md bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] rounded-2xl p-6 sm:p-8 shadow-2xl opacity-0"
+            className="absolute bottom-12 sm:bottom-16 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-6 w-[calc(100vw-32px)] max-w-sm sm:max-w-md bg-[#FFF9F1] text-[#30201B] border border-[#E2D3C0] rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl opacity-0"
           >
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[10px] uppercase tracking-wider text-[#641F29] mb-2.5 font-semibold font-mono">
               <Sparkles className="w-2.5 h-2.5 text-[#B8322A]" />
               <span>Act III • Plated for Sharing</span>
             </div>
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#30201B] tracking-tight mb-1">
+            <h3 className="font-serif text-lg xs:text-xl sm:text-2xl font-bold text-[#30201B] tracking-tight mb-1">
               Piled High for Sharing
             </h3>
             <p className="font-serif italic text-xs sm:text-sm text-[#862D35] mb-2.5">
@@ -478,7 +478,7 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
               <div
                 id="food-landing-target"
                 ref={landingTargetRef}
-                className="relative w-full max-w-[340px] sm:max-w-[400px] md:max-w-[440px] lg:max-w-[480px] xl:max-w-[500px] aspect-square flex items-center justify-center select-none"
+                className="relative w-full max-w-[270px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[440px] lg:max-w-[480px] xl:max-w-[500px] aspect-square flex items-center justify-center select-none"
               >
                 {/* Refined Ceramic Plate Base */}
                 <div className="absolute inset-0 rounded-full bg-[#E8D8C5]/80 border-2 border-[#E2D3C0] shadow-md flex items-center justify-center p-4">
@@ -560,10 +560,10 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
               </div>
 
               {/* Real Ordering & Inquiry Actions */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 pt-1">
+              <div className="flex flex-col sm:flex-row flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
                 <Link
                   to="/menu"
-                  className="w-full sm:w-auto flex-1 py-3 px-5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.16em] uppercase rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto sm:flex-1 min-h-[44px] py-3 px-5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.16em] uppercase rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center gap-2"
                 >
                   <Utensils className="w-3.5 h-3.5 text-white" />
                   <span>Full Digital Menu (₹)</span>
@@ -571,31 +571,33 @@ export const FloatingFoodJourney: React.FC<FloatingFoodJourneyProps> = ({
 
                 <button
                   onClick={onOpenReservation}
-                  className="w-full sm:w-auto py-3 px-5 bg-[#FFF9F1] hover:bg-[#E8D8C5] text-[#30201B] font-semibold text-xs tracking-[0.16em] uppercase rounded-lg border border-[#E2D3C0] hover:border-[#641F29] transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full sm:w-auto min-h-[44px] py-3 px-5 bg-[#FFF9F1] hover:bg-[#E8D8C5] text-[#30201B] font-semibold text-xs tracking-[0.16em] uppercase rounded-lg border border-[#E2D3C0] hover:border-[#641F29] transition-all flex items-center justify-center gap-2 shadow-sm"
                 >
                   <Calendar className="w-3.5 h-3.5 text-[#B8322A]" />
                   <span>Table Inquiry</span>
                 </button>
 
-                <a
-                  href={RESTAURANT_INFO.externalLinks.zomato}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto py-3 px-4 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-[#30201B] rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span className="text-[#e23744]">Zomato</span>
-                  <ExternalLink className="w-3 h-3 text-[#30201B]/60" />
-                </a>
+                <div className="w-full sm:w-auto grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3">
+                  <a
+                    href={RESTAURANT_INFO.externalLinks.zomato}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[44px] py-2.5 px-3.5 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-[#30201B] rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span className="text-[#e23744]">Zomato</span>
+                    <ExternalLink className="w-3 h-3 text-[#30201B]/60" />
+                  </a>
 
-                <a
-                  href={RESTAURANT_INFO.externalLinks.swiggy}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto py-3 px-4 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-[#302321] rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span className="text-[#fc8019]">Swiggy</span>
-                  <ExternalLink className="w-3 h-3 text-[#30201B]/60" />
-                </a>
+                  <a
+                    href={RESTAURANT_INFO.externalLinks.swiggy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[44px] py-2.5 px-3.5 bg-[#FFF9F1] hover:bg-[#E8D8C5] border border-[#E2D3C0] hover:border-[#641F29] text-[#302321] rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span className="text-[#fc8019]">Swiggy</span>
+                    <ExternalLink className="w-3 h-3 text-[#30201B]/60" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

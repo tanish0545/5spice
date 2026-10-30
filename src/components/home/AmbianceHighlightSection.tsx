@@ -78,16 +78,16 @@ export const AmbianceHighlightSection: React.FC = () => {
       className="relative py-20 sm:py-28 bg-[#E8D8C5] border-b border-[#E2D3C0] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[#641F29] text-xs font-semibold tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
+            <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-3.5 py-1.5 rounded-full bg-[#F4EBDD] border border-[#E2D3C0] text-[#641F29] text-[10px] xs:text-xs font-semibold tracking-[0.18em] xs:tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[#B8322A]" />
               <span>Sakinaka Atmosphere</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#30201B] tracking-tight">
+            <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[#30201B] tracking-tight">
               An Elevated Haven on Andheri-Kurla Road
             </h2>
-            <p className="mt-3.5 text-sm sm:text-base text-[#30201B]/80 font-normal leading-relaxed">
+            <p className="mt-3 sm:mt-3.5 text-xs sm:text-sm md:text-base text-[#30201B]/80 font-normal leading-relaxed">
               Step away from the bustle of Sakinaka into an intimate Oriental dining room tailored for quiet couple dinners,
               lively corporate lunches, and grand weekend family celebrations.
             </p>
@@ -96,7 +96,7 @@ export const AmbianceHighlightSection: React.FC = () => {
           <div>
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#FFF9F1] border border-[#E2D3C0] hover:border-[#641F29] text-[#30201B] hover:text-[#641F29] text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
+              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[#FFF9F1] border border-[#E2D3C0] hover:border-[#641F29] text-[#30201B] hover:text-[#641F29] text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
             >
               <Eye className="w-4 h-4 text-[#B8322A]" />
               <span>Full Photo Gallery</span>
@@ -112,7 +112,7 @@ export const AmbianceHighlightSection: React.FC = () => {
               key={idx}
               className="group relative rounded-2xl overflow-hidden bg-[#FFF9F1] border border-[#E2D3C0] hover:border-[#641F29]/50 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col"
             >
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-[#F4EBDD]">
+              <div className="relative h-52 xs:h-60 sm:h-72 overflow-hidden bg-[#F4EBDD]">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -125,9 +125,9 @@ export const AmbianceHighlightSection: React.FC = () => {
                 </span>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-4 xs:p-5 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-[#30201B] group-hover:text-[#641F29] transition-colors mb-2">
+                  <h3 className="font-serif text-lg xs:text-xl font-bold text-[#30201B] group-hover:text-[#641F29] transition-colors mb-2">
                     {card.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#30201B]/80 leading-relaxed font-normal">

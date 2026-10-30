@@ -4,6 +4,7 @@ import { ArrowRight, Flame, Utensils, Sparkles, ExternalLink, Award } from 'luci
 import { useGSAP } from '@gsap/react';
 import { gsap, isReducedMotion } from '../../animations/gsap-config';
 import { CulinarySteam } from '../effects/CulinarySteam';
+import { CoastalChilliPrawnsAssembly } from './CoastalChilliPrawnsAssembly';
 import { RESTAURANT_INFO } from '../../data/fiveSpiceData';
 
 interface SignatureDishesSectionProps {
@@ -95,15 +96,15 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Section Header */}
-        <div className="signatures-header text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8D8C5] border border-[#E2D3C0] text-[#641F29] text-xs font-semibold tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
+        <div className="signatures-header text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-3.5 py-1.5 rounded-full bg-[#E8D8C5] border border-[#E2D3C0] text-[#641F29] text-[10px] xs:text-xs font-semibold tracking-[0.18em] xs:tracking-[0.2em] uppercase mb-3.5 font-mono shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#B8322A]" />
             <span>Editorial Gastronomy Showcase</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#30201B] font-bold tracking-tight">
+          <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-[#30201B] font-bold tracking-tight">
             Cult Mumbai Signatures
           </h2>
-          <p className="mt-3.5 text-sm sm:text-base text-[#30201B]/80 font-normal leading-relaxed">
+          <p className="mt-3 sm:mt-3.5 text-xs sm:text-sm md:text-base text-[#30201B]/80 font-normal leading-relaxed">
             Every dish is prepared over ferocious high-flame woks and served in towering portions crafted for communal dining. Discover our most celebrated creations.
           </p>
         </div>
@@ -113,10 +114,10 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
           EDITORIAL SPREAD 1: Special Chicken Pot Rice (Large Left Image, Right Story)
           =======================================================
         */}
-        <div className="editorial-spread mb-20 lg:mb-28 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="editorial-spread mb-16 sm:mb-20 lg:mb-28 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-center">
           {/* Left Large Photography Column */}
           <div className="spread-image lg:col-span-7 relative group">
-            <div className="relative h-80 sm:h-96 md:h-[440px] rounded-2xl overflow-hidden bg-[#E8D8C5] border border-[#E2D3C0] shadow-lg">
+            <div className="relative h-64 xs:h-72 sm:h-80 md:h-[440px] rounded-2xl overflow-hidden bg-[#E8D8C5] border border-[#E2D3C0] shadow-lg">
               {/* Subtle steam rising from clay pot */}
               <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-44 h-32 pointer-events-none">
                 <CulinarySteam variant="medium" intensity={0.32} />
@@ -132,10 +133,10 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
 
               {/* Price & Portions Ribbon */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                <span className="px-3 py-1 rounded-md bg-[#17110F]/85 backdrop-blur-md text-xs font-mono font-semibold border border-[#E2D3C0]/30">
+                <span className="px-3 py-1 rounded-md bg-[#17110F]/85 backdrop-blur-md text-[11px] sm:text-xs font-mono font-semibold border border-[#E2D3C0]/30">
                   Colossal 1000ml Clay-Pot
                 </span>
-                <span className="px-4 py-1.5 rounded-full bg-[#641F29] text-white font-mono font-bold text-base shadow-md">
+                <span className="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#641F29] text-white font-mono font-bold text-sm sm:text-base shadow-md">
                   ₹695
                 </span>
               </div>
@@ -143,17 +144,17 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
           </div>
 
           {/* Right Editorial Story Column */}
-          <div className="spread-content lg:col-span-5 space-y-4">
+          <div className="spread-content lg:col-span-5 space-y-3 sm:space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-[#641F29] font-semibold uppercase tracking-wider">
               <Award className="w-4 h-4 text-[#B77B4A]" />
               <span>Signature Clay-Pot Sensation</span>
             </div>
 
-            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#30201B] leading-tight">
+            <h3 className="font-serif text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-[#30201B] leading-tight">
               5 Spice Special Chicken Pot Rice
             </h3>
 
-            <p className="font-serif italic text-sm sm:text-base text-[#862D35]">
+            <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#862D35]">
               Jasmine Rice, Shiitake Mushrooms &amp; Rich Wok Gravy
             </p>
 
@@ -161,16 +162,16 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
               Steamed fragrant jasmine rice crowned with a luscious, bubbling brown sauce of sliced chicken, shiitake mushrooms, baby corn, pak choi, and bamboo shoots. Served in a signature 1000ml pot designed for communal sharing across the table.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-2 text-xs text-[#30201B]/80 font-medium">
+            <div className="pt-2 flex flex-wrap gap-2 text-[11px] sm:text-xs text-[#30201B]/80 font-medium">
               <span className="px-3 py-1 rounded-full bg-[#FFF9F1] border border-[#E2D3C0]">Serves 2–3 easily</span>
               <span className="px-3 py-1 rounded-full bg-[#FFF9F1] border border-[#E2D3C0]">Balanced Savoury Heat</span>
               <span className="px-3 py-1 rounded-full bg-[#FFF9F1] border border-[#E2D3C0]">800°F Wok Hei</span>
             </div>
 
-            <div className="pt-3">
+            <div className="pt-2 sm:pt-3">
               <Link
                 to="/menu"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#B8322A] hover:bg-[#862D35] text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
+                className="w-full xs:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#B8322A] hover:bg-[#862D35] text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
               >
                 <span>View Rice Specialties</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -184,19 +185,19 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
           EDITORIAL SPREAD 2: Coastal Chilli Prawns (Left Story, Right Large Image)
           =======================================================
         */}
-        <div className="editorial-spread mb-20 lg:mb-28 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="editorial-spread mb-16 sm:mb-20 lg:mb-28 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-center">
           {/* Left Editorial Story Column */}
-          <div className="spread-content lg:col-span-5 order-2 lg:order-1 space-y-4">
+          <div className="spread-content lg:col-span-5 order-2 lg:order-1 space-y-3 sm:space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-[#641F29] font-semibold uppercase tracking-wider">
               <Flame className="w-4 h-4 text-[#B8322A]" />
               <span>Coastal Seafood Mastery</span>
             </div>
 
-            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#302321] leading-tight">
+            <h3 className="font-serif text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-[#302321] leading-tight">
               Sizzling Coastal Chilli Prawns
             </h3>
 
-            <p className="font-serif italic text-sm sm:text-base text-[#862D35]">
+            <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#862D35]">
               Crushed Sichuan Garlic &amp; Dark Soya Glaze
             </p>
 
@@ -204,16 +205,16 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
               Succulent ocean catch prawns tossed over smoking high heat with crushed red chillies, charred garlic slivers, sliced capsicum, and premium aged dark soya. Delivered sizzling to the table with irresistible aroma.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-2 text-xs text-[#302321]/80 font-medium">
+            <div className="pt-2 flex flex-wrap gap-2 text-[11px] sm:text-xs text-[#302321]/80 font-medium">
               <span className="px-3 py-1 rounded-full bg-[#FFF9F1] border border-[#E2D3C0]">Fresh Coastal Prawns</span>
               <span className="px-3 py-1 rounded-full bg-[#FFF9F1] border border-[#E2D3C0]">Spice Level: 2/3</span>
               <span className="px-3 py-1 rounded-full bg-[#FFF9F1] border border-[#E2D3C0]">Chef Recommendation</span>
             </div>
 
-            <div className="pt-3">
+            <div className="pt-2 sm:pt-3">
               <Link
                 to="/menu"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#B8322A] hover:bg-[#862D35] text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
+                className="w-full xs:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#B8322A] hover:bg-[#862D35] text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
               >
                 <span>View Seafood Menu</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -221,28 +222,17 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
             </div>
           </div>
 
-          {/* Right Large Photography Column */}
-          <div className="spread-image lg:col-span-7 order-1 lg:order-2 relative group">
-            <div className="relative h-80 sm:h-96 md:h-[440px] rounded-2xl overflow-hidden bg-[#E8D8C5] border border-[#E2D3C0] shadow-lg">
-              {/* Subtle steam */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-44 h-32 pointer-events-none">
-                <CulinarySteam variant="medium" intensity={0.3} />
-              </div>
+          {/* Right Large Photography Column: Cinematic Empty Plate to Assembled Prawns Showcase */}
+          <div className="spread-image lg:col-span-7 order-1 lg:order-2 relative flex items-center justify-center">
+            <div className="relative w-full h-auto min-h-[340px] xs:min-h-[380px] sm:min-h-[440px] md:min-h-[480px] rounded-2xl overflow-hidden bg-[#17110F] border border-[#3D2A24] shadow-2xl flex items-center justify-center p-4 sm:p-6 md:p-8">
+              <CoastalChilliPrawnsAssembly />
 
-              <img
-                src="https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=1200&q=80"
-                alt="5 Spice Sizzling Chilli Prawns"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-
-              {/* Price Ribbon */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                <span className="px-3 py-1 rounded-md bg-[#17110F]/85 backdrop-blur-md text-xs font-mono font-semibold border border-[#E2D3C0]/30">
-                  Wok-Seared Ocean Prawns
+              {/* Price & Wok Catch Ribbon */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white pointer-events-none z-40">
+                <span className="px-3 py-1 rounded-md bg-[#17110F]/85 backdrop-blur-md text-[11px] sm:text-xs font-mono font-semibold border border-[#3D2A24]">
+                  Wok-Seared Jumbo Ocean Prawns
                 </span>
-                <span className="px-4 py-1.5 rounded-full bg-[#641F29] text-white font-mono font-bold text-base shadow-md">
+                <span className="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#B8322A] text-white font-mono font-bold text-sm sm:text-base shadow-md">
                   ₹545
                 </span>
               </div>
@@ -426,10 +416,10 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-3 w-full lg:w-auto">
             <Link
               to="/menu"
-              className="px-6 py-3 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-all flex items-center gap-2"
+              className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-all flex items-center justify-center gap-2"
             >
               <Utensils className="w-4 h-4 text-white" />
               <span>Full Digital Menu</span>
@@ -438,31 +428,33 @@ export const SignatureDishesSection: React.FC<SignatureDishesSectionProps> = ({ 
             {onReserveTable && (
               <button
                 onClick={onReserveTable}
-                className="px-6 py-3 bg-[#FFF9F1] border border-[#E2D3C0] text-[#30201B] hover:text-[#641F29] hover:border-[#641F29] font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-all"
+                className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-[#FFF9F1] border border-[#E2D3C0] text-[#30201B] hover:text-[#641F29] hover:border-[#641F29] font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm transition-all flex items-center justify-center"
               >
                 Reserve Sakinaka Table
               </button>
             )}
 
-            <a
-              href={RESTAURANT_INFO.externalLinks.zomato}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-3 bg-[#FFF9F1] border border-[#E2D3C0] text-[#302321] text-xs font-semibold tracking-wider uppercase rounded-lg shadow-sm hover:border-[#641F29] transition-colors flex items-center gap-1.5"
-            >
-              <span className="text-[#e23744]">Zomato</span>
-              <ExternalLink className="w-3 h-3 text-[#30201B]/60" />
-            </a>
+            <div className="w-full sm:w-auto grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3">
+              <a
+                href={RESTAURANT_INFO.externalLinks.zomato}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-h-[44px] px-4 py-2.5 bg-[#FFF9F1] border border-[#E2D3C0] text-[#302321] text-xs font-semibold tracking-wider uppercase rounded-lg shadow-sm hover:border-[#641F29] transition-colors flex items-center justify-center gap-1.5"
+              >
+                <span className="text-[#e23744]">Zomato</span>
+                <ExternalLink className="w-3 h-3 text-[#30201B]/60" />
+              </a>
 
-            <a
-              href={RESTAURANT_INFO.externalLinks.swiggy}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-3 bg-[#FFF9F1] border border-[#E2D3C0] text-[#302321] text-xs font-semibold tracking-wider uppercase rounded-lg shadow-sm hover:border-[#641F29] transition-colors flex items-center gap-1.5"
-            >
-              <span className="text-[#fc8019]">Swiggy</span>
-              <ExternalLink className="w-3 h-3 text-[#302321]/60" />
-            </a>
+              <a
+                href={RESTAURANT_INFO.externalLinks.swiggy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-h-[44px] px-4 py-2.5 bg-[#FFF9F1] border border-[#E2D3C0] text-[#302321] text-xs font-semibold tracking-wider uppercase rounded-lg shadow-sm hover:border-[#641F29] transition-colors flex items-center justify-center gap-1.5"
+              >
+                <span className="text-[#fc8019]">Swiggy</span>
+                <ExternalLink className="w-3 h-3 text-[#302321]/60" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

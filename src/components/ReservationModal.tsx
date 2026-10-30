@@ -65,15 +65,15 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md">
       <div
         ref={modalBoxRef}
-        className="relative w-full max-w-lg bg-[#30201B] border border-[#3D2A24] rounded-2xl shadow-2xl p-6 md:p-8 text-[#FFF9F1]"
+        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-[#30201B] border border-[#3D2A24] rounded-2xl shadow-2xl p-4 xs:p-6 md:p-8 text-[#FFF9F1]"
       >
         {/* Close Button */}
         <button
           onClick={handleReset}
-          className="absolute top-5 right-5 text-[#E8D8C5]/70 hover:text-[#FFF9F1] transition-colors p-1"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#E8D8C5]/70 hover:text-[#FFF9F1] transition-colors p-2"
           aria-label="Close table reservation window"
         >
           <X className="w-5 h-5" />
@@ -81,11 +81,11 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
 
         {step === 'form' ? (
           <div>
-            <div className="mb-6 text-center">
+            <div className="mb-5 sm:mb-6 text-center">
               <span className="text-[10px] tracking-[0.2em] text-[#B77B4A] uppercase font-semibold block mb-1 font-mono">
                 Table Booking • Sakinaka Outlet
               </span>
-              <h3 className="font-serif text-2xl text-[#FFF9F1] font-bold tracking-tight">
+              <h3 className="font-serif text-xl sm:text-2xl text-[#FFF9F1] font-bold tracking-tight">
                 Table Reservation Inquiry
               </h3>
               <p className="text-xs text-[#E8D8C5]/75 mt-1">
@@ -93,8 +93,8 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
+            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="text-[11px] text-[#E8D8C5] uppercase tracking-wider mb-1 flex items-center gap-1 font-medium font-mono">
                     <Calendar className="w-3 h-3 text-[#B8322A]" /> Date
@@ -104,7 +104,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                     required
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                   />
                 </div>
                 <div>
@@ -114,7 +114,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                   <select
                     value={formData.time}
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                   >
                     <optgroup label="Lunch Hours">
                       <option value="12:30">12:30 PM - Lunch Seating</option>
@@ -133,7 +133,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="text-[11px] text-[#E8D8C5] uppercase tracking-wider mb-1 flex items-center gap-1 font-medium font-mono">
                     <Users className="w-3 h-3 text-[#B8322A]" /> Guests
@@ -141,7 +141,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                   <select
                     value={formData.guests}
                     onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                   >
                     <option value="2 Guests">2 Guests (Couple Table)</option>
                     <option value="4 Guests (Family Table)">4 Guests (Family Table)</option>
@@ -156,7 +156,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                   <select
                     value={formData.seating}
                     onChange={(e) => setFormData({ ...formData, seating: e.target.value })}
-                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                   >
                     <option value="Main Dining Hall">Main Dining Hall</option>
                     <option value="Family Alcove">Family Alcove</option>
@@ -175,11 +175,11 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                   placeholder="e.g. Rahul Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                  className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-[11px] text-[#E8D8C5] uppercase tracking-wider mb-1 font-medium font-mono">
                     Email Address
@@ -190,7 +190,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                   />
                 </div>
                 <div>
@@ -203,7 +203,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                    className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                   />
                 </div>
               </div>
@@ -217,13 +217,13 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                   placeholder="e.g. Birthday celebration, Jain preparation, high chair needed"
                   value={formData.specialRequests}
                   onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
-                  className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2 text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
+                  className="w-full bg-[#17110F] border border-[#3D2A24] rounded-lg px-3 py-2.5 sm:py-2 text-sm sm:text-xs text-[#FFF9F1] focus:outline-none focus:border-[#B77B4A]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full mt-4 py-3 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.16em] uppercase rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                className="w-full min-h-[48px] mt-4 py-3.5 bg-[#B8322A] hover:bg-[#862D35] text-white font-semibold text-xs tracking-[0.16em] uppercase rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4 text-white" />
                 <span>Submit Reservation Request</span>
@@ -232,7 +232,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
               <div className="text-center pt-1">
                 <a
                   href="tel:+912228562186"
-                  className="inline-flex items-center gap-1.5 text-[11px] text-[#E8D8C5]/70 hover:text-[#B77B4A] transition-colors font-mono"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-1.5 text-[11px] text-[#E8D8C5]/70 hover:text-[#B77B4A] transition-colors font-mono py-1"
                 >
                   <Phone className="w-3 h-3 text-[#B8322A]" />
                   Need immediate confirmation? Call +91 22 28562186
@@ -245,7 +245,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
             <div className="w-14 h-14 mx-auto rounded-full bg-emerald-950/60 border border-emerald-500/40 flex items-center justify-center">
               <CheckCircle2 className="w-8 h-8 text-emerald-400" />
             </div>
-            <h3 className="font-serif text-2xl text-[#FFF9F1] font-bold">
+            <h3 className="font-serif text-xl sm:text-2xl text-[#FFF9F1] font-bold">
               Reservation Request Received
             </h3>
             <p className="text-xs text-[#E8D8C5]/80 max-w-sm mx-auto leading-relaxed">
@@ -261,16 +261,16 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                 Our Sakinaka host will confirm table availability via phone/SMS shortly before your seating time.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 justify-center pt-2">
+            <div className="flex flex-col sm:flex-row gap-2.5 justify-center pt-2">
               <a
                 href="tel:+912228562186"
-                className="px-5 py-2.5 bg-[#B8322A] text-white font-semibold text-xs tracking-wider uppercase rounded-lg hover:bg-[#862D35] transition-colors inline-flex items-center justify-center gap-2 shadow-sm font-mono"
+                className="min-h-[44px] px-5 py-2.5 bg-[#B8322A] text-white font-semibold text-xs tracking-wider uppercase rounded-lg hover:bg-[#862D35] transition-colors inline-flex items-center justify-center gap-2 shadow-sm font-mono"
               >
                 <Phone className="w-3.5 h-3.5" /> Call Sakinaka Host
               </a>
               <button
                 onClick={handleReset}
-                className="px-5 py-2.5 bg-[#17110F] hover:bg-[#17110F]/80 text-[#FFF9F1] border border-[#3D2A24] text-xs tracking-wider uppercase rounded-lg transition-colors font-semibold"
+                className="min-h-[44px] px-5 py-2.5 bg-[#17110F] hover:bg-[#17110F]/80 text-[#FFF9F1] border border-[#3D2A24] text-xs tracking-wider uppercase rounded-lg transition-colors font-semibold"
               >
                 Close Window
               </button>
